@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10;
+    left: 10;
+}
+.logo-panel{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.admin-form{
+    display: inline-flex;
+    border: 1px solid #079a8e;
+    box-shadow: 0px 0px 8px 0px rgba(48, 213, 200, 0.8);
+    padding:20px;
+    padding-right: 30px;
+    padding-left: 0px;
+    border-radius: 20px;
+    margin-left: 20%;
+    margin-top: 0.2%;
+}
+.login{
+    margin-top: 4%;
+}
+.form-content,.sub-admin,.createUser{
+    padding: 40px;
+    padding-bottom: 0px;
+    border-radius: 20px;
+}
+.sub-admin,.createUser{
+     box-shadow: 0px 0px 8px 0px rgba(48, 213, 200, 0.8);
+}
+.form-content h1 ,.sub-admin h1,.createUser h1{
+    color: #079a8e;
+    display: inline-block;
+    border-bottom: 2px solid rgb(48, 213, 200);
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+   
+}
+.right-img img{
+    width: 400px;
+    height: 400px;
+    margin-top: 15%;
+}
+label{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color:#054c46;
+}
+input,textarea{
+    display: block;
+    width: 100%;
+    border: 1px solid rgb(48, 213, 200);
+    border-radius: 10px;
+    padding: 10px;
+}
+input[type="submit"]{
+    margin-top: 20px;
+    background-color: #30D5C8;
+    font-weight: bold;
+    border-radius: 15px;
+}
+input[type="submit"]:hover{
+    opacity: 0.7;
+}
+.admin{
+    display: block;
+    margin-top: 10px;
+    text-decoration-color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    text-align: center;
+}
+a{
+    display: block;
+    margin-top: 15px;
+}
+.error{
+    color: red;;
+}
+
+.not-found{
+    background-color: rgb(255, 211, 217);
+    border: 1px solid red;
+    color: red;
+    border-radius: 10px;
+    display: inline;
+    padding: 10px 20px;
+    position: absolute;
+    top: 1%;
+    right: 40%;
+}
+
+.main-container{
+    display: flex;
+}
+.left-nav{
+    background-color: rgb(48, 213, 200);
+    height: 100vh;
+    padding:20px 40px ;
+       
+}
+.left-nav nav ul{
+    margin-top: 20%;
+}
+.left-nav nav ul li{
+    margin-bottom: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+.link
+{
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.link:hover
+{
+    color: #046c63;
+}
+.admin-heading{
+    text-decoration: none;
+}
+.admin-heading h1{
+    color: black;
+    font-family: 'Bonheur Royale', cursive;
+    font-size: 50px;
+}
+iframe{
+    width: 81vw;
+    height: 99vh;
+}
+.default{
+    width: 80vw;
+    text-align: center;
+    font-family: 'Bonheur Royale', sans-serif;
+    font-size: 100px;
+    color: #30D5C8;
+}
+.defaultimg{
+    height: 80vh;
+}
+.sub-admin{
+    width: 50vw;
+    margin-left: 25%;
+    margin-top: 10%;
+    padding: 40px; 
+    border: 1px solid; 
+}
+table{
+    margin-top: 2%;
+    margin-left: 25%;
+}
+th{
+    background-color: rgb(83, 247, 233);
+}
+td,th{
+    border: 1px solid black;
+    padding: 10px;
+}
+.nav-bar{
+    background-color: rgb(48, 213, 200);
+    padding: 20px;
+    border-left: 1px solid #046c63;
+    display: flex;
+    justify-content: space-between;
+}
+
+td a{
+    text-decoration: none;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: white;
+}
+td a:hover{
+    opacity: 0.5;
+}
+
+.createUser{
+    width: 40vw;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-top: 1rem;
+    border: 1px solid #046c63;
+}
+.createUser{
+    display: inline-block;
+}
+input[type="radio"]{
+    width: 20px;
+    height: 15px;
+}
+.radio{
+    display: inline-flex;
+    padding-right: 10px;
+    align-items: center;
+}
+.active{
+    background-color: rgb(86, 247, 86);
+    color: black;
+}
+.deactive{
+    background-color: green;
+}
+.blog{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.blog label{
+    font-weight: bold;
+}
+.edit{
+    background-color: royalblue;
+}
+.filter{
+    width: 100px;
+}
+.filter input{
+    margin: 0;
+    display: inline;
+}
+.filter select{
+    display: inline;
+}

@@ -2,7 +2,7 @@
     include '../../database/connection.php';
     include '../../commonControllers/validation.php';
 
-    class FetchBlogs
+    class Blog
     {
         private $Conn;
         function __construct()

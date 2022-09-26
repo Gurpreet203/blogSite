@@ -10,7 +10,7 @@
         new Redirect("../admin_login.php");
     }
 
-    class Blog
+    class Blogs
     {
         use Methods;
 

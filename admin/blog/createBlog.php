@@ -3,7 +3,7 @@
     
     if(isset($_POST['submit']))
     {
-        $obj = new Blog($_POST);
+        $obj = new Blogs($_POST);
         $obj->create();
     }
 ?>

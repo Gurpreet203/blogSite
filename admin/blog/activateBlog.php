@@ -1,6 +1,6 @@
 <?php
     include 'blogController.php';
-    $obj = new Blog();
+    $obj = new Blogs();
     $obj->status('blogs',$_GET['id']);
 
     new Redirect("viewBlog.php");

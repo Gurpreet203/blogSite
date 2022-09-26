@@ -22,7 +22,7 @@
 </html>
 
 <?php
-    $obj = new Blog();
+    $obj = new Blogs();
 
     if(isset($_POST['submit']))
     {

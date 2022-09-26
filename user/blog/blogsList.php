@@ -1,8 +1,8 @@
 <?php
     include 'nav.html';
-    include 'fetchBlog.php';
+    include 'BlogProcess.php';
     
-    $obj = new FetchBlogs();
+    $obj = new Blog();
     $obj->validatePage();
     $obj->List();
 ?>

@@ -7,25 +7,25 @@
     font-family: sans-serif;
 }
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
     position: absolute;
     top: 10;
     left: 10;
 }
 .logo-panel{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 3.125rem;
 }
 .admin-form{
     display: inline-flex;
-    border: 1px solid #079a8e;
-    box-shadow: 0px 0px 8px 0px rgba(48, 213, 200, 0.8);
-    padding:20px;
-    padding-right: 30px;
-    padding-left: 0px;
-    border-radius: 20px;
+    border: 0.0625rem solid #079a8e;
+    box-shadow: 0rem 0rem 0.5rem 0rem rgba(48, 213, 200, 0.8);
+    padding:1.25rem;
+    padding-right: 1.875rem;
+    padding-left: 0rem;
+    border-radius: 1.25rem;
     margin-left: 20%;
     margin-top: 0.2%;
 }
@@ -33,60 +33,60 @@
     margin-top: 4%;
 }
 .form-content,.sub-admin,.createUser{
-    padding: 40px;
-    padding-bottom: 0px;
-    border-radius: 20px;
+    padding: 2.5rem;
+    padding-bottom: 0rem;
+    border-radius: 1.25rem;
 }
 .sub-admin,.createUser{
-     box-shadow: 0px 0px 8px 0px rgba(48, 213, 200, 0.8);
+     box-shadow: 0rem 0rem 0.5rem 0rem rgba(48, 213, 200, 0.8);
 }
 .form-content h1 ,.sub-admin h1,.createUser h1{
     color: #079a8e;
     display: inline-block;
-    border-bottom: 2px solid rgb(48, 213, 200);
-    padding-bottom: 15px;
-    margin-bottom: 10px;
+    border-bottom: 0.125rem solid rgb(48, 213, 200);
+    padding-bottom: 0.9375rem;
+    margin-bottom: 0.625rem;
    
 }
 .right-img img{
-    width: 400px;
-    height: 400px;
+    width: 25rem;
+    height: 25rem;
     margin-top: 15%;
 }
 label{
     display: block;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin-top: 0.9375rem;
+    margin-bottom: 0.5rem;
     color:#054c46;
 }
 input,textarea{
     display: block;
     width: 100%;
-    border: 1px solid rgb(48, 213, 200);
-    border-radius: 10px;
-    padding: 10px;
+    border: 0.0625rem solid rgb(48, 213, 200);
+    border-radius: 0.625rem;
+    padding: 0.625rem;
 }
 input[type="submit"]{
-    margin-top: 20px;
+    margin-top: 1.25rem;
     background-color: #30D5C8;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
 }
 input[type="submit"]:hover{
     opacity: 0.7;
 }
 .admin{
     display: block;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     text-decoration-color: black;
     font-weight: bold;
     text-transform: uppercase;
-    word-spacing: 5px;
+    word-spacing: 0.3125rem;
     text-align: center;
 }
 a{
     display: block;
-    margin-top: 15px;
+    margin-top: 0.9375rem;
 }
 .error{
     color: red;;
@@ -94,11 +94,11 @@ a{
 
 .not-found{
     background-color: rgb(255, 211, 217);
-    border: 1px solid red;
+    border: 0.0625rem solid red;
     color: red;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     display: inline;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     position: absolute;
     top: 1%;
     right: 40%;
@@ -110,14 +110,13 @@ a{
 .left-nav{
     background-color: rgb(48, 213, 200);
     height: 100vh;
-    padding:20px 40px ;
-       
+    padding:1.25rem 2.5rem ;
 }
 .left-nav nav ul{
     margin-top: 20%;
 }
 .left-nav nav ul li{
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     list-style: none;
     font-weight: bold;
 }
@@ -125,8 +124,8 @@ a{
 {
     color: black;
     text-decoration: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
+    border-bottom: 0.0625rem solid black;
+    padding-bottom: 0.3125rem;
 }
 .link:hover
 {
@@ -138,7 +137,7 @@ a{
 .admin-heading h1{
     color: black;
     font-family: 'Bonheur Royale', cursive;
-    font-size: 50px;
+    font-size: 3.125rem;
 }
 iframe{
     width: 81vw;
@@ -148,7 +147,7 @@ iframe{
     width: 80vw;
     text-align: center;
     font-family: 'Bonheur Royale', sans-serif;
-    font-size: 100px;
+    font-size: 6.25rem;
     color: #30D5C8;
 }
 .defaultimg{
@@ -158,8 +157,8 @@ iframe{
     width: 50vw;
     margin-left: 25%;
     margin-top: 10%;
-    padding: 40px; 
-    border: 1px solid; 
+    padding: 2.5rem; 
+    border: 0.0625rem solid; 
 }
 table{
     margin-top: 2%;
@@ -169,13 +168,13 @@ th{
     background-color: rgb(83, 247, 233);
 }
 td,th{
-    border: 1px solid black;
-    padding: 10px;
+    border: 0.0625rem solid black;
+    padding: 0.625rem;
 }
 .nav-bar{
     background-color: rgb(48, 213, 200);
-    padding: 20px;
-    border-left: 1px solid #046c63;
+    padding: 1.25rem;
+    border-left: 0.0625rem solid #046c63;
     display: flex;
     justify-content: space-between;
 }
@@ -183,8 +182,8 @@ td,th{
 td a{
     text-decoration: none;
     background-color: red;
-    border-radius: 10px;
-    padding: 10px 15px;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.9375rem;
     color: white;
 }
 td a:hover{
@@ -193,22 +192,22 @@ td a:hover{
 
 .createUser{
     width: 40vw;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     margin-left: 20%;
     margin-top: 1rem;
-    border: 1px solid #046c63;
+    border: 0.0625rem solid #046c63;
 }
 .createUser{
     display: inline-block;
 }
 input[type="radio"]{
-    width: 20px;
-    height: 15px;
+    width: 1.25rem;
+    height: 0.9375rem;
 }
 .radio{
     display: inline-flex;
-    padding-right: 10px;
+    padding-right: 0.625rem;
     align-items: center;
 }
 .active{
@@ -229,7 +228,7 @@ input[type="radio"]{
     background-color: royalblue;
 }
 .filter{
-    width: 100px;
+    width: 6.25rem;
 }
 .filter input{
     margin: 0;

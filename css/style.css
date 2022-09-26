@@ -8,21 +8,21 @@ head{
     font-family: sans-serif;
 }
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
     position: absolute;
     top: 10;
     left: 10;
-    border-radius: 50px;
+    border-radius: 3.125rem;
 }
 form{
     display: inline-flex;
-    border: 1px solid purple;
-    box-shadow: 0px 0px 6px 0px rgba(245, 17, 245,0.5);
-    padding:20px;
-    padding-right: 30px;
-    padding-left: 0px;
-    border-radius: 20px;
+    border: 0.0625rem solid purple;
+    box-shadow: 0rem 0rem 0.375rem 0rem rgba(245, 17, 245,0.5);
+    padding:1.25rem;
+    padding-right: 1.875rem;
+    padding-left: 0rem;
+    border-radius: 1.25rem;
     margin-left: 20%;
     margin-top: 0.8%;
     background-color: white;
@@ -31,76 +31,76 @@ form{
     margin-top: 4%;
 }
 .form-content{
-    padding: 40px;
-    padding-bottom: 0px;
-    border-radius: 20px;
+    padding: 2.5rem;
+    padding-bottom: 0rem;
+    border-radius: 1.25rem;
 }
 .form-content h1{
     color: purple;
     display: inline-block;
-    border-bottom: 2px solid purple;
-    padding-bottom: 15px;
-    margin-bottom: 10px;
+    border-bottom: 0.125rem solid purple;
+    padding-bottom: 0.9375rem;
+    margin-bottom: 0.625rem;
    
 }
 .right-img img{
-    width: 400px;
-    height: 400px;
+    width: 25rem;
+    height: 25rem;
     margin-top: 15%;
 }
 label{
     display: block;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin-top: 0.9375rem;
+    margin-bottom: 0.5rem;
 }
 input{
     display: block;
     width: 100%;
-    border: 1px solid purple;
-    border-radius: 10px;
-    padding: 10px;
+    border: 0.0625rem solid purple;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
 }
 input[type="submit"]{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 0.9375rem;
+    margin-bottom: 0.9375rem;
     background-color: rgb(245, 17, 245);
     color: whitesmoke;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
 }
 input[type="submit"]:hover{
     opacity: 0.7;
 }
 .admin{
     display: block;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     text-decoration-color: black;
     font-weight: bold;
     text-transform: uppercase;
-    word-spacing: 5px;
+    word-spacing: 0.3125rem;
     text-align: center;
 }
 a{
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
 }
 .error{
     color: red;
 }
 
 .activate,.not-activate,.status{
-    border: 1px solid green;
-    border-radius: 10px;
+    border: 0.0625rem solid green;
+    border-radius: 0.625rem;
     background-color: rgb(166, 245, 166);
     color: green;
     display: inline;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     position: absolute;
     top: 1%;
     right: 40%;
 }
 .not-activate{
     background-color: rgb(255, 211, 217);
-    border: 1px solid red;
+    border: 0.0625rem solid red;
     color: red;
 }
 .nav-bar{
@@ -115,28 +115,28 @@ a{
     display: inline;
 }
 .logo-left div{
-    height: 100px;
-    width: 100px;
+    height: 6.25rem;
+    width: 6.25rem;
 }
 .logo-nav{
-    height: 40px;
-    width: 40px;
-    border-radius: 50px;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 3.125rem;
     object-fit: fill;
 }
 .logo-left{
     display: flex;
     flex-direction: column;
-    padding: 0px 5px;
+    padding: 0rem 0.3125rem;
     align-items: center;
 }
 .nav-bar div a{
-    padding: 10px;
-    margin: 10px;
+    padding: 0.625rem;
+    margin: 0.625rem;
     margin-left: 0;
     background-color: purple;
     color: white;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     text-decoration: none;
 }
 a:hover{
@@ -145,7 +145,7 @@ a:hover{
 .title{
     text-align: center;
     margin-top: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 0.0625rem solid black;
     padding-bottom: 1rem;
 }
 .description{
@@ -153,7 +153,7 @@ a:hover{
     line-height: 1.7rem;
     height: 65vh;
     overflow: auto;
-    border-bottom: 1px solid black;
+    border-bottom: 0.0625rem solid black;
 }
 .like{
     display: inline;
@@ -169,23 +169,23 @@ a:hover{
     position: absolute;
     top: 1.5%;
     right: 10%;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     text-decoration: none;
     color: white;
     background-color: purple;
-    padding: 10px;
+    padding: 0.625rem;
 }
 .blogList{
     margin: 2rem;
 }
 .blogList li{
     margin-bottom: 0.5rem;
-    border: 1px solid black;
+    border: 0.0625rem solid black;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     font-weight: bold;
     overflow: auto;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0,0,0.6);
+    box-shadow: 0rem 0rem 0.3125rem 0rem rgba(0, 0,0,0.6);
 }
 .blogList li a{
     text-decoration: none;
@@ -194,5 +194,5 @@ a:hover{
 .date{
     text-align: right;
     color: rgb(112, 110, 110);
-    padding-right: 40px;
+    padding-right: 2.5rem;
 }

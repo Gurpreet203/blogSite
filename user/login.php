@@ -1,9 +1,6 @@
 <?php
     include 'userController.php';
-
-    $obj = new User();
-    $obj->validatePage();
-
+    
     if(isset($_POST['submit']))
     {
         $obj = new User($_POST);

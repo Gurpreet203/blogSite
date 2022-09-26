@@ -2,6 +2,13 @@
     include '../../database/connection.php';
     include '../../commonControllers/validation.php';
 
+    $obj = new Validate();
+    $valid = $obj->UserPageValidate();
+    if(!$valid)
+    {
+        new Redirect("../signup.php");
+    }
+
     class Blog
     {
         private $Conn;
@@ -13,16 +20,6 @@
             {
                 echo $this->Conn;
                 die;
-            }
-        }
-
-        function validatePage()
-        {
-            $obj = new Validate();
-            $valid = $obj->UserPageValidate();
-            if($valid==false)
-            {
-                new Redirect("../signup.php");
             }
         }
 

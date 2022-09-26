@@ -3,7 +3,7 @@
 
     $obj = new Validate();
     $valid = $obj->AdminPageValidate();
-    if($valid==true)
+    if($valid)
     {
         new Redirect("admin_index.php");
     }

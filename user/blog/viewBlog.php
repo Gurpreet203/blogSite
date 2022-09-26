@@ -1,8 +1,7 @@
 <?php
     include 'nav.html';
     include 'BlogProcess.php';
-    $obj = new Blog();
-    $obj->validatePage();
+    
 ?>
 
 <html>
@@ -15,6 +14,7 @@
 
 <?php
 
+    $obj = new Blog();
     $data = $obj->viewBlog($_GET['id']);
     
 ?>

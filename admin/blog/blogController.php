@@ -5,7 +5,7 @@
 
     $obj = new Validate();
     $valid = $obj->AdminPageValidate();
-    if($valid==false)
+    if(!$valid)
     {
         new Redirect("../admin_login.php");
     }

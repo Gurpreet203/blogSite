@@ -5,6 +5,14 @@
     $error = array();
     $status = array();
 
+    $obj = new Validate();
+    $valid = $obj->UserPageValidate();
+
+    if($valid)
+    {
+        new Redirect("blog/blogsList.php");
+    }
+
     class User extends Validate
     {
         private $Data;
@@ -20,14 +28,6 @@
                 die;
             }
             $this->Data = $data;
-        }
-
-        function validatePage()
-        {
-            if($this->UserPageValidate()==true)
-            {
-                new Redirect("blog/blogsList.php");
-            }
         }
 
         function signup()

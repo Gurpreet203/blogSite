@@ -1,7 +1,6 @@
 <?php
     include 'BlogProcess.php';
     $obj = new Blog();
-    $obj->validatePage();
 
     if(isset($_GET['dislike']))
     {

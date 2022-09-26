@@ -24,8 +24,14 @@
 
         function delete($tableName , $id)
         {
-            try{
-                $success = $this->Conn->query("DELETE FROM $tableName WHERE id='$id'");
+            try
+            {
+                if($tableName=='blogs')
+                {
+                    $this->Conn->query("DELETE FROM $likes WHERE blogid='$id'");
+                }
+
+                $this->Conn->query("DELETE FROM $tableName WHERE id='$id'");
             }
             catch(Exception $e)
             {

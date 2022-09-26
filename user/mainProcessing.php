@@ -74,7 +74,7 @@
             {
                 $email = $this->Data['email'];
                 $pass = $this->Data['pass'];
-                $data = $this->Conn->query("SELECT id,email,password,activate FROM user WHERE email = '$email'") ?? false;
+                $data = $this->Conn->query("SELECT id,email,password,activate FROM user WHERE email = '$email' AND password='$pass'") ?? false;
                 $data = $data->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['uid'] = $data['id'];
 
@@ -90,15 +90,9 @@
                     }
                     else
                     {
-                        $error['activation'] = "You are activated but email or password is incorrect";
-                    }
-                    
-                    if($data['email']==$this->Data['email'] && $data['password']==$this->Data['pass'] && $data['activate']==1)
-                    {
                         $_SESSION['login'] = true;
                         new Redirect('blog/blogsList.php');
                     }
-                
                 }
                 
             }

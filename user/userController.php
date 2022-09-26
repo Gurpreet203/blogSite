@@ -1,11 +1,11 @@
 <?php
-    include '../validation/validation.php';
+    include '../commonControllers/validation.php';
     include '../database/connection.php';
 
     $error = array();
     $status = array();
 
-    class User extends Check
+    class User extends Validate
     {
         private $Data;
         private $Conn;
@@ -22,7 +22,7 @@
             $this->Data = $data;
         }
 
-        function validate()
+        function validatePage()
         {
             if($this->UserPageValidate()==true)
             {
@@ -35,7 +35,7 @@
             global $error;
             $error = $this->nameValidate($this->Data['fname'],'fname');
             $error = $this->nameValidate($this->Data['lname'],'lname');
-            $error = $this->EmailPassCheck($this->Data['email'],$this->Data['pass']);
+            $error = $this->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
@@ -47,7 +47,7 @@
                     $data = $this->Conn->query("SELECT email FROM admin WHERE email='$email'");
                     $data = $data->fetch();
 
-                    if($data == 0)
+                    if(!$data)
                     {
                         $this->Conn->exec("INSERT INTO User (first_name,last_name,email,password) VALUES ('$first','$last','$email','$pass')");
                         new Redirect('login.php');
@@ -68,17 +68,16 @@
         function login()
         {
             global $error;
-            $error = $this->EmailPassCheck($this->Data['email'],$this->Data['pass']);
+            $error = $this->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
                 $email = $this->Data['email'];
                 $pass = $this->Data['pass'];
-                $data = $this->Conn->query("SELECT id,email,password,activate FROM user WHERE email = '$email' AND password='$pass'") ?? false;
+                $data = $this->Conn->query("SELECT id,email,password,activate FROM user WHERE email = '$email' AND password='$pass'");
                 $data = $data->fetch(PDO::FETCH_ASSOC);
-                $_SESSION['uid'] = $data['id'];
 
-               if($data == false)
+               if(!$data)
                 {
                     $error['login'] = "please enter correct email or password";
                 }
@@ -90,6 +89,7 @@
                     }
                     else
                     {
+                        $_SESSION['uid'] = $data['id'];
                         $_SESSION['login'] = true;
                         new Redirect('blog/blogsList.php');
                     }
@@ -101,7 +101,7 @@
         function forgetPassword()
         {
             global $status,$error;
-            $error = $this->EmailPassCheck($this->Data['email'],$this->Data['pass']);
+            $error = $this->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
@@ -110,7 +110,7 @@
                 
                 $data = $this->Conn->exec("UPDATE user SET password = '$pass' WHERE email = '$email'") ?? false;
 
-               if($data == false)
+               if(!$data)
                 {
                     $status['login'] = "please enter correct email";
                 } 

@@ -1,15 +1,15 @@
 <?php
-    include 'blogProcess.php';
-    $obj = new Blogs();
-    $obj->validate();
+    include 'fetchBlog.php';
+    $obj = new FetchBlogs();
+    $obj->validatePage();
 
     if(isset($_GET['dislike']))
     {
-        $obj->dislikes($_GET['id']);
+        $obj->likeDislike($_GET['id'],0);
     }
     else
     {
-        $obj->likes($_GET['id']);
+        $obj->likeDislike($_GET['id']);
     }
     header('location:viewBlog.php?id='.$_GET['id']);
 ?>

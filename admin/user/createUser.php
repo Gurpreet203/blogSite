@@ -3,7 +3,7 @@ include 'UserProcess.php';
 
 if(isset($_POST['submit']))
 {
-    $obj = new UsersByAdmin($_POST);
+    $obj = new UserByAdmin($_POST);
     $obj->create();
     if(empty($error))
     {

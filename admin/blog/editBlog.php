@@ -1,5 +1,5 @@
 <?php
-    include 'blogProcess.php';
+    include 'blogController.php';
     
     $id = $_GET['id'];
     $conn = new DataBase();

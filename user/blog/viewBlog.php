@@ -1,11 +1,10 @@
 <?php
     include 'nav.html';
-    include 'blogProcess.php';
-    
-    $obj = new Blogs();
-    $obj->validate();
-    $obj->view($_GET['id']);
+    include 'fetchBlog.php';
+    $obj = new FetchBlogs();
+    $obj->validatePage();
 ?>
+
 <html>
     <head>
         <body>
@@ -13,3 +12,9 @@
         </body>
     </head>
 </html>
+
+<?php
+
+    $data = $obj->viewBlog($_GET['id']);
+    
+?>

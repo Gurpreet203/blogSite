@@ -1,7 +1,7 @@
 <?php
-    include 'mainProcessing.php';
+    include 'userController.php';
     $obj = new User();
-    $obj->validate();
+    $obj->validatePage();
 
     if(isset($_POST['submit']))
     {

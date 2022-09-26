@@ -1,5 +1,5 @@
 <?php
-    include 'blogProcess.php';
+    include 'blogController.php';
     
     if(isset($_POST['submit']))
     {

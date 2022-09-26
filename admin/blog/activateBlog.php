@@ -1,5 +1,7 @@
 <?php
-    include 'blogProcess.php';
+    include 'blogController.php';
     $obj = new Blog();
-    $obj->status($_GET['id']);
+    $obj->status('blogs',$_GET['id']);
+
+    new Redirect("viewBlog.php");
 ?>

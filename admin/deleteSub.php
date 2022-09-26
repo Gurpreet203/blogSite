@@ -1,9 +1,10 @@
 <?php
-    include 'admin_process.php';
+    include 'admin_controller.php';
    
     $obj = new Admin();
-    $obj->validate();
+    $obj->validatePage();
+
+    $obj->delete('admin',$_GET['id']);
     
-    $obj->deleteSub($_GET['id']);
     new Redirect("viewAdmin.php");
 ?>

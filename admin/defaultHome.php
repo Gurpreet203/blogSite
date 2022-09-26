@@ -1,7 +1,7 @@
 <?php
-    include 'admin_process.php';
+    include 'admin_controller.php';
     $obj = new Admin();
-    $obj->validate();
+    $obj->validatePage();
 ?>
 
 <!DOCTYPE html>

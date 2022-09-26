@@ -1,10 +1,13 @@
 <?php
     include "../database/connection.php";
-    include "../validation/validation.php";
+    include "../commonControllers/validation.php";
+    include "../commonControllers/sameMethods.php";
     
     $error = array();
-    class Admin 
+    class Admin
     {
+        use Methods;
+        
         private $Data;
         private $Conn;
 
@@ -21,9 +24,9 @@
             $this->Data = $data;
         }
 
-        function validate()
+        function validatePage()
         {
-            $obj = new Check();
+            $obj = new Validate();
             $valid = $obj->AdminPageValidate();
             if($valid==false)
             {
@@ -33,41 +36,38 @@
 
         function login()
         {
-            $valid = new Check();
+            $valid = new Validate();
             global $error;
              
-            $error = $valid->EmailPassCheck($this->Data['email'],$this->Data['pass']);
+            $error = $valid->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
                 $email = $this->Data['email'];
                 $password = $this->Data['pass'];
 
-                $data = $this->Conn->query("SELECT email,password,roll FROM admin where email = '$email'")??false;
+                $data = $this->Conn->query("SELECT email,password,roll FROM admin where email = '$email' AND password='$password'");
                 $data = $data->fetch(PDO::FETCH_ASSOC);
-                $_SESSION['adminRoll'] = $data['roll'];
 
-                if($data == false)
-                {
-                    $error['notfound'] = "Sorry admin you make some mistake while login";
+                if($data)
+                {  
+                    $_SESSION['adminRoll'] = $data['roll'];
+                    $_SESSION['loginAdmin']= true;
+                    new Redirect("admin_index.php");
                 }
                 else
                 {
-                    if($data['email'] == $this->Data['email'] && $data['password']==$this->Data['pass'])
-                    {
-                        $_SESSION['loginAdmin']= true;
-                        new Redirect("admin_index.php");
-                    }
+                    $error['notfound'] = "Sorry admin you make some mistake while login";
                 }
             }
         }
 
         function createSubAdmin()
         {
-            $valid = new Check();
+            $valid = new Validate();
             global $error;
              
-            $error = $valid->EmailPassCheck($this->Data['email'],$this->Data['pass']);
+            $error = $valid->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
@@ -98,42 +98,8 @@
         {
             $data = $this->Conn->query("SELECT * FROM admin WHERE roll!=1");
             $data = $data->fetchAll(PDO::FETCH_ASSOC);
-            if(empty($data))
-            {
-                echo "<h1 style=\"margin-left:20%;margin-top:20%;\">No Sub Admin Exist</h1></tr></table>";
-                die;
-            }
-            echo "<table cellspacing=0>";
-            echo "<tr> <th>ID</th> <th>Email</th>";
-            if($_SESSION['adminRoll']==1)
-            {
-                echo "<th>DELETE</th>";
-            } 
-            echo "</tr>";
-            foreach($data as $value)
-            {
-                echo "<tr>";
-                echo "<td>".$value['id']."</td>";
-                echo "<td>".$value['email']."</td>";
-                if($_SESSION['adminRoll']==1)
-                {
-                    echo "<td><a href = 'deleteSub.php?id=".$value['id']."'>Delete</a></td>";
-                }
-                echo "</tr>";
-            }
 
-            echo "</table>";
-        }
-
-        function deleteSub($id)
-        {
-            try{
-                $success = $this->Conn->query("DELETE FROM admin WHERE id='$id'");
-            }
-            catch(Exception $e)
-            {
-                echo "something went wrong";
-            }
+            return $data;
         }
     }
 ?>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    class Check
+    class Validate
     {
         
         public $error=array();
@@ -72,9 +72,9 @@
             }
         
         
-        // this function is for check if the user fill email and password or not
+        // this function is for Validate if the user fill email and password or not
         
-            function EmailPassCheck($email , $password)
+            function EmailPassValidate($email , $password)
             {
                 
                 if( empty($email) )

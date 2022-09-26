@@ -21,17 +21,48 @@
     </nav>
 </body>
 </html>
+
 <?php
     include 'UserProcess.php';
 
-    $obj = new UsersByAdmin();
+    $obj = new UserByAdmin();
+
     if(isset($_POST['submit']))
     {
-        $obj->viewUsers($_POST['search']);
+       $data =  $obj->view('user',$_POST['search']);
     }
     else
     {
         
-        $obj->viewUsers();
+        $data = $obj->view('user');
     }
+
+    if(empty($data))
+    {
+        echo "<h1 style=\"margin-left:20%;margin-top:20%;\">No User Exist</h1></tr></table>";
+        die;
+    }
+    echo "<table cellspacing=0 style=\"margin-left:10%;\">";
+    echo "<tr> <th>ID</th> <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>Status</th> <th>Delete</th></tr>";
+    foreach($data as $value)
+    {
+        echo "<tr>";
+        echo "<td>".$value['id']."</td>";
+        echo "<td>".$value['first_name']."</td>";
+        echo "<td>".$value['last_name']."</td>";
+        echo "<td>".$value['email']."</td>";
+        if($value['activate']==0)
+        {
+            echo "<td><a href = 'activate.php?id=".$value['id']."' class='active'>Deactivate</a></td>";
+        }
+        else
+        {
+            echo "<td><a href = 'activate.php?id=".$value['id']."' class='deactive'>Activate</a></td>";
+        }
+        echo "<td><a href = 'delete.php?id=".$value['id']."'>Delete</a></td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+        
 ?>

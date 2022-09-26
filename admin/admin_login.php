@@ -1,7 +1,7 @@
 <?php
-    include 'admin_process.php';
+    include 'admin_controller.php';
 
-    $obj = new Check();
+    $obj = new Validate();
     $valid = $obj->AdminPageValidate();
     if($valid==true)
     {

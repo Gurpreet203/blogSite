@@ -1,8 +1,8 @@
 <?php
     include '../../database/connection.php';
-    include '../../validation/validation.php';
+    include '../../commonControllers/validation.php';
 
-    class Blogs
+    class FetchBlogs
     {
         private $Conn;
         function __construct()
@@ -16,9 +16,9 @@
             }
         }
 
-        function validate()
+        function validatePage()
         {
-            $obj = new Check();
+            $obj = new Validate();
             $valid = $obj->UserPageValidate();
             if($valid==false)
             {
@@ -47,7 +47,7 @@
             echo "</ol>";
         }
 
-        function view($id)
+        function viewBlog($id)
         {
             $uid = $_SESSION['uid'];
 
@@ -89,7 +89,7 @@
             echo "<p class=\"date\">Created on ".$data['date']."</p>";
         }
 
-        function likes($id)
+        function likeDislike($id,$like=1)
         {
             $uid = $_SESSION['uid'];
 
@@ -97,27 +97,11 @@
             $data = $data->fetch(PDO::FETCH_ASSOC);
             if($data==false)
             {
-                $this->Conn->exec("INSERT INTO likes (_like,userid,blogid) VALUES (1,'$uid','$id')");
+                $this->Conn->exec("INSERT INTO likes (_like,userid,blogid) VALUES ($like,'$uid','$id')");
             }
             else
             {
-                $this->Conn->exec("UPDATE likes SET _like=1");
-            }
-        }
-
-        function dislikes($id)
-        {
-            $uid = $_SESSION['uid'];
-
-            $data = $this->Conn->query("SELECT blogid FROM likes WHERE userid='$uid' AND blogid='$id'");
-            $data = $data->fetch(PDO::FETCH_ASSOC);
-            if($data==false)
-            {
-                $this->Conn->exec("INSERT INTO likes (_like,userid,blogid) VALUES (0,'$uid','$id')");
-            }
-            else
-            {
-                $this->Conn->exec("UPDATE likes SET _like=0 WHERE userid='$uid' AND blogid='$id'");
+                $this->Conn->exec("UPDATE likes SET _like=$like WHERE userid='$uid' AND blogid='$id'");
             }
         }
     }

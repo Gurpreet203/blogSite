@@ -1,7 +1,7 @@
 <?php
     include 'UserProcess.php';
 
-    $obj = new UsersByAdmin();
-    $obj->delete($_GET['id']);
+    $obj = new UserByAdmin();
+    $obj->delete('user',$_GET['id']);
     new Redirect('viewUsers.php');
 ?>

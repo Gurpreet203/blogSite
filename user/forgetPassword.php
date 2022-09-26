@@ -36,7 +36,7 @@
         <div class="form-content">
             <h1>Forget Password</h1>
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email"/>
             <?php
                     if(!empty($error['email']))
                     {
@@ -44,7 +44,7 @@
                     }
             ?>
             <label for="pass">Password</label>
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="pass" placeholder="Password"/>
             <?php
                     if(!empty($error['pass']))
                     {
@@ -52,7 +52,7 @@
                         $error = array();
                     }
                 ?>
-            <input type="submit" name="submit" value="Change">
+            <input type="submit" name="submit" value="Change"/>
             <a href="login.php">Back</a>
         </div>
     </form>

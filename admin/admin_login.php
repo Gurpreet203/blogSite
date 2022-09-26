@@ -39,7 +39,7 @@
         <div class="form-content">
             <h1>Welcome Admin</h1>
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email"/>
             <?php
                 if(!empty($error['email']))
                 {
@@ -47,14 +47,14 @@
                 }
             ?>
             <label for="pass">Password</label>
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="pass" placeholder="Password"/>
             <?php
                 if(!empty($error['pass']))
                 {
                     echo "<p class='error'>".$error['pass']."</p>";
                 }
             ?>
-            <input type="submit" name="submit" value="LogIn">
+            <input type="submit" name="submit" value="LogIn"/>
         </div>
     </form>
 </body>

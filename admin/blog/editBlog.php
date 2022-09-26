@@ -11,7 +11,7 @@
     {
         new Redirect('viewBlog.php');
     }
-    
+
     if(isset($_POST['submit']))
     {
         $obj = new Blogs($_POST);
@@ -38,7 +38,7 @@
     </nav>
     <form action="editBlog.php?id=<?php echo $id?>" method="post" class="blog">
             <label for="title">Title of Blog</label>
-            <input type="text" name="title" placeholder="Title" value=<?php global $data; echo$data['title'];?>>
+            <input type="text" name="title" placeholder="Title" value=<?php global $data; echo$data['title'];?>/>
             <?php
                     if(!empty($error['title']))
                     {
@@ -54,7 +54,7 @@
                         $error = array();
                     }
                 ?>
-            <input type="submit" name="submit" value="Change">
+            <input type="submit" name="submit" value="Change"/>
     </form>
 </body>
 </html>

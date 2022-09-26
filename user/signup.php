@@ -27,7 +27,7 @@
         <div class="form-content">
             <h1>SignUp</h1>
             <label for="fname">First Name</label>
-            <input type="text" placeholder="First Name" name="fname">
+            <input type="text" placeholder="First Name" name="fname"/>
                 <?php
                     if(!empty($error['fname']))
                     {
@@ -35,7 +35,7 @@
                     }
                 ?>
             <label for="lname">Last Name</label>
-            <input type="text" placeholder="Last Name" name="lname">
+            <input type="text" placeholder="Last Name" name="lname"/>
             <?php
                     if(!empty($error['lname']))
                     {
@@ -43,7 +43,7 @@
                     }
                 ?>
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email"/>
             <?php
                     if(!empty($error['email']))
                     {
@@ -51,7 +51,7 @@
                     }
                 ?>
             <label for="pass">Password</label>
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="pass" placeholder="Password"/>
             <?php
                     if(!empty($error['pass']))
                     {
@@ -59,7 +59,7 @@
                         $error = array();
                     }
                 ?>
-            <input type="submit" name="submit" value="SignUp">
+            <input type="submit" name="submit" value="SignUp"/>
             <a href="LogIn.php">Already Have a Account?? LogIn</a>
         </div>
     </form>

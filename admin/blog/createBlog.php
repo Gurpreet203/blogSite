@@ -36,7 +36,7 @@
     ?>
     <form action="createBlog.php" method="post" class="blog">
             <label for="title">Title of Blog</label>
-            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="title" placeholder="Title"/>
             <?php
                     if(!empty($error['title']))
                     {
@@ -52,7 +52,7 @@
                         $error = array();
                     }
                 ?>
-            <input type="submit" name="submit" value="Create">
+            <input type="submit" name="submit" value="Create"/>
     </form>
 </body>
 </html>

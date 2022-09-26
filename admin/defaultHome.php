@@ -17,6 +17,6 @@
     <h1 class="default">
         Welcome Admin
     </h1>
-    <img src="../images/analitics.png" alt="analitics" class="defaultimg">
+    <img src="../images/analitics.png" alt="analitics" class="defaultimg"/>
 </body>
 </html>

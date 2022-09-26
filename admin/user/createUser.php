@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
        
             <h1>SignUp</h1>
             <label for="fname">First Name</label>
-            <input type="text" placeholder="First Name" name="fname">
+            <input type="text" placeholder="First Name" name="fname"/>
                 <?php
                     if(!empty($error['fname']))
                     {
@@ -35,7 +35,7 @@ if(isset($_POST['submit']))
                     }
                 ?>
             <label for="lname">Last Name</label>
-            <input type="text" placeholder="Last Name" name="lname">
+            <input type="text" placeholder="Last Name" name="lname"/>
             <?php
                     if(!empty($error['lname']))
                     {
@@ -43,7 +43,7 @@ if(isset($_POST['submit']))
                     }
                 ?>
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email"/>
             <?php
                     if(!empty($error['email']))
                     {
@@ -51,7 +51,7 @@ if(isset($_POST['submit']))
                     }
                 ?>
             <label for="pass">Password</label>
-            <input type="password" name="pass" placeholder="Password">
+            <input type="password" name="pass" placeholder="Password"/>
             <?php
                     if(!empty($error['pass']))
                     {
@@ -62,14 +62,14 @@ if(isset($_POST['submit']))
             <label for="radio">Activate User ??</label><br>
             <div class="radio"> 
             <label for="true" class="radio">Yes</label>
-            <input type="radio" name="radio" value="true" id="true">
+            <input type="radio" name="radio" value="true" id="true"/>
             </div>
             <div class="radio">
             <label for="false" class="radio">No</label>
-            <input type="radio" name="radio" value="false" id="false">
+            <input type="radio" name="radio" value="false" id="false"/>
             </div>
             
-            <input type="submit" name="submit" value="Create">
+            <input type="submit" name="submit" value="Create"/>
         
     </form>
 </body>

@@ -4,9 +4,14 @@
     $id = $_GET['id'];
     $conn = new DataBase();
     $conn = $conn->config();
-    $data = $conn->query("SELECT title,description FROM blogs WHERE id='$id'");
+    $data = $conn->query("SELECT * FROM blogs WHERE id='$id'");
     $data = $data->fetch(PDO::FETCH_ASSOC);
 
+    if(!$data)
+    {
+        new Redirect('viewBlog.php');
+    }
+    
     if(isset($_POST['submit']))
     {
         $obj = new Blogs($_POST);

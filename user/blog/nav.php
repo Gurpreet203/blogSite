@@ -1,3 +1,6 @@
+<?php
+    include 'BlogProcess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,6 +1,5 @@
 <?php
-    include 'nav.html';
-    include 'BlogProcess.php';
+    include 'nav.php';
     
     $obj = new Blog();
     

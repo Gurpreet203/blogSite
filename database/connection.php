@@ -10,12 +10,13 @@
 
         function __construct()
         {
-            try{
-                $this->dbConn= new PDO("mysql:host=$this->dbHost;dbname=$this->dbName",$this->dbUser,$this->dbPassword); 
+            try
+            {
+                $this->dbConn = new PDO("mysql:host=$this->dbHost;dbname=$this->dbName",$this->dbUser,$this->dbPassword); 
             }
             catch(Exception $e)
             {
-                return "Connection Problem";
+                $this->dbConn =  "Connection Problem";
             }
         }
         function config()

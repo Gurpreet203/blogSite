@@ -179,12 +179,13 @@ a:hover{
     margin: 2rem;
 }
 .blogList li{
-    /* list-style: none; */
+    margin-bottom: 0.5rem;
     border: 1px solid black;
     padding: 1rem;
     border-radius: 10px;
     font-weight: bold;
     overflow: auto;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0,0,0.6);
 }
 .blogList li a{
     text-decoration: none;

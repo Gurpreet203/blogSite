@@ -34,6 +34,22 @@
 <form action="createSubAdmin.php" method="post" class="sub-admin">
    
     <h1>Sub-Admin</h1>
+    <label for="fname">First Name</label>
+    <input type="text" placeholder="First Name" name="fname"/>
+        <?php
+            if(!empty($error['fname']))
+            {
+                echo "<p class='error'>".$error['fname']."</p>";
+            }
+        ?>
+        <label for="lname">Last Name</label>
+        <input type="text" placeholder="Last Name" name="lname"/>
+        <?php
+            if(!empty($error['lname']))
+            {
+                echo "<p class='error'>".$error['lname']."</p>";
+            }
+        ?>
     <label for="email">Email</label>
     <input type="email" name="email" placeholder="Email"/>
     <?php

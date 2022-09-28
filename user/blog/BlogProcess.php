@@ -55,6 +55,12 @@
             {
                 new Redirect("blogsList.php");
             }
+            if($data['activate']==0)
+            {
+                
+                new Redirect("blogsList.php?deactive=true");
+                
+            }
 
             $likeValid = $this->Conn->query("SELECT _like FROM likes WHERE blogid='$id' AND userid ='$uid'");
             $likeValid = $likeValid->fetch(PDO::FETCH_ASSOC);
@@ -72,16 +78,16 @@
             {
                 if($likeValid['_like']==1)
                 {
-                    echo  "<span class='numbers'>".$likes['likes']." Likes</span><a href='bloglikes.php?id=$id&dislike=1'class='like'><i class=\"bi bi-hand-thumbs-down\"></i> DISLIKES</a>";
+                    echo  "<span class='numbers'>".$likes['likes']." Likes</span><a href='bloglikes.php?id=$id&dislike=1'class='like'><i class=\"bi bi-hand-thumbs-down\"></i> DISLIKES </a>".$dislikes['dislikes']." dislikes";
                 }
                 else
                 {
-                    echo  "<span class='numbers'>".$dislikes['dislikes']." Dislikes</span><a href='bloglikes.php?id=$id'class='like'><i class=\"bi bi-hand-thumbs-up\"></i> LIKES</a>";
+                    echo  "<span class='numbers'>".$dislikes['dislikes']." Dislikes</span><a href='bloglikes.php?id=$id'class='like'><i class=\"bi bi-hand-thumbs-up\"></i> LIKES </a>".$likes['likes']." likes";
                 }
             }
             else
             {
-                echo  "<span class='numbers'>".$dislikes['dislikes']." Dislikes</span><a href='bloglikes.php?id=$id'class='like'><i class=\"bi bi-hand-thumbs-up\"></i> LIKES</a>";
+                echo  "<span class='numbers'>".$dislikes['dislikes']." Dislikes</span><a href='bloglikes.php?id=$id'class='like'><i class=\"bi bi-hand-thumbs-up\"></i> LIKES</a>".$likes['likes']." likes";
             }
             echo "<p class=\"date\">Created on ".$data['date']."</p>";
         }

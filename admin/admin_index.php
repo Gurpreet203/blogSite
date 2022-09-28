@@ -49,7 +49,7 @@
             </nav>
         </section>
         <section class="rest-screen">
-            <iframe src="defaultHome.php" frameborder="0" name="myframe"></iframe>
+            <iframe src="defaultHome.php" frameborder="1" name="myframe"></iframe>
         </section>
     </section>
 </body>

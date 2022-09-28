@@ -30,7 +30,10 @@
             }  
             else
             {
-                echo "<h2 style=\"text-align:center;\">".$error['size']."</h2>";
+                if(isset($error['size']))
+                {
+                    echo "<h2 style=\"text-align:center;\">".$error['size']."</h2>";
+                }
             }
         }
     ?>

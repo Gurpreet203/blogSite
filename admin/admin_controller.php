@@ -4,7 +4,7 @@
     include "../commonControllers/sameMethods.php";
     
     $error = array();
-    class Admin
+    class Admin extends Validate
     {
         use Methods;
         
@@ -36,10 +36,9 @@
 
         function login()
         {
-            $valid = new Validate();
+          
             global $error;
-             
-            $error = $valid->EmailPassValidate($this->Data['email'],$this->Data['pass']);
+            $error = $this->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
@@ -64,13 +63,16 @@
 
         function createSubAdmin()
         {
-            $valid = new Validate();
+            
             global $error;
-             
-            $error = $valid->EmailPassValidate($this->Data['email'],$this->Data['pass']);
+            $error = $this->nameValidate($this->Data['fname'],'fname');
+            $error = $this->nameValidate($this->Data['lname'],'lname');
+            $error = $this->EmailPassValidate($this->Data['email'],$this->Data['pass']);
 
             if(empty($error))
             {
+                $fname = $this->Data['fname'];
+                $lname = $this->Data['lname'];
                 $email = $this->Data['email'];
                 $password = $this->Data['pass'];
 
@@ -84,7 +86,7 @@
                 {
                     try
                     {
-                        $this->Conn->exec("INSERT INTO admin (email,password) VALUES ('$email','$password')");
+                        $this->Conn->exec("INSERT INTO admin (firstName,lastName,email,password) VALUES ('$fname','$lname','$email','$password')");
                     }
                     catch(Exception $e)
                     {

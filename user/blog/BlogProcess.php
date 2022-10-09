@@ -27,30 +27,18 @@
         {
             $data = $this->Conn->query("SELECT * FROM blogs");
             $data = $data->fetchAll(PDO::FETCH_ASSOC);
-            if(empty($data))
-            {
-                echo "<h1 style=\"margin-left:50%;margin-top:50%;\">No Blog Exist</h1></tr></table>";
-                die;
-            }
+
+            return $data;
             
-            echo "<ol class='blogList'>";
-            foreach($data as $value)
-            {
-                if($value['activate']==1)
-                {
-                    echo "<li><a href='viewBlog.php?id=".$value['id']."'>".$value['title']."</li>";
-                }
-            }
-            echo "</ol>";
         }
 
         function viewBlog($id)
         {
             $uid = $_SESSION['uid'];
 
-            $data = $this->Conn->query("SELECT * FROM blogs WHERE id='$id'");
+            $data = $this->Conn->query("SELECT *,count(_like) as likes FROM blogs  INNER JOIN likes on (blogs.id=likes.blogid) WHERE id='$id' AND _like=1");
             $data = $data->fetch(PDO::FETCH_ASSOC);
-
+            
             if($data == 0)
             {
                 new Redirect("blogsList.php");
@@ -61,35 +49,12 @@
                 new Redirect("blogsList.php?deactive=true");
                 
             }
-
-            $likeValid = $this->Conn->query("SELECT _like FROM likes WHERE blogid='$id' AND userid ='$uid'");
-            $likeValid = $likeValid->fetch(PDO::FETCH_ASSOC);
-
-            $likes = $this->Conn->query("SELECT count(_like) AS likes FROM likes WHERE _like=1 AND blogid='$id'");
-            $likes = $likes->fetch(PDO::FETCH_ASSOC);
-
             $dislikes = $this->Conn->query("SELECT count(_like) AS dislikes FROM likes WHERE _like=0 AND blogid='$id'");
             $dislikes = $dislikes->fetch(PDO::FETCH_ASSOC);
- 
-            echo "<h1 class=\"title\">".$data['title']."</h1>";
-            echo "<div class=\"description\">";
-            echo "<p>".$data['description']."</p></div>";
-            if($likeValid!=false)
-            {
-                if($likeValid['_like']==1)
-                {
-                    echo  "<span class='numbers'>".$likes['likes']." Likes</span><a href='bloglikes.php?id=$id&dislike=1'class='like'><i class=\"bi bi-hand-thumbs-down\"></i> DISLIKES </a>".$dislikes['dislikes']." dislikes";
-                }
-                else
-                {
-                    echo  "<span class='numbers'>".$dislikes['dislikes']." Dislikes</span><a href='bloglikes.php?id=$id'class='like'><i class=\"bi bi-hand-thumbs-up\"></i> LIKES </a>".$likes['likes']." likes";
-                }
-            }
-            else
-            {
-                echo  "<span class='numbers'>".$dislikes['dislikes']." Dislikes</span><a href='bloglikes.php?id=$id'class='like'><i class=\"bi bi-hand-thumbs-up\"></i> LIKES</a>".$likes['likes']." likes";
-            }
-            echo "<p class=\"date\">Created on ".$data['date']."</p>";
+            
+            $data['dislikes']=$dislikes['dislikes'];
+           
+            return $data;
         }
 
         function likeDislike($id,$like=1)

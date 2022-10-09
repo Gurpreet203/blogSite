@@ -70,5 +70,22 @@
             }
         }
 
+        function update($id)
+        {
+            global $error;
+            $error = $this->nameValidate($this->Data['fname'],'fname');
+            $error = $this->nameValidate($this->Data['lname'],'lname');
+            $error = $this->EmailPassValidate($this->Data['email'],$this->Data['pass']);
+
+            if(empty($error))
+            {
+                $first = $this->Data['fname'];
+                $last = $this->Data['lname'];
+                $email = $this->Data['email'];
+                $pass = $this->Data['pass'];
+
+                $this->Conn->exec("UPDATE user SET first_name = '$first',last_name= '$last',email='$email',password='$pass'");
+            }
+        }
     }
 ?>

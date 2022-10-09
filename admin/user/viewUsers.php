@@ -43,7 +43,7 @@
         die;
     }
     echo "<table cellspacing=0 style=\"margin-left:10%;\">";
-    echo "<tr> <th>ID</th> <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>Status</th> <th>Delete</th></tr>";
+    echo "<tr> <th>ID</th> <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>Edit</th> <th>Status</th> <th>Delete</th></tr>";
     foreach($data as $value)
     {
         echo "<tr>";
@@ -51,6 +51,7 @@
         echo "<td>".$value['first_name']."</td>";
         echo "<td>".$value['last_name']."</td>";
         echo "<td>".$value['email']."</td>";
+        echo "<td><a href = 'editUser.php?id=".$value['id']."' class='edit'>Edit</a></td>";
         if($value['activate']==0)
         {
             echo "<td><a href = 'activate.php?id=".$value['id']."' class='active'>Deactivate</a></td>";

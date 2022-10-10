@@ -36,9 +36,9 @@
         {
             $uid = $_SESSION['uid'];
 
-            $data = $this->Conn->query("SELECT *,count(_like) as likes FROM blogs  INNER JOIN likes on (blogs.id=likes.blogid) WHERE id='$id' AND _like=1");
+            $data = $this->Conn->query("SELECT *,count(_like) as likes ,(SELECT _like FROM likes WHERE _like=1 AND userid=".$_SESSION['uid']." AND blogid='$id') AS likeVisit FROM blogs  INNER JOIN likes on (blogs.id=likes.blogid) WHERE id='$id' AND _like=1");
             $data = $data->fetch(PDO::FETCH_ASSOC);
-            
+         
             if($data == 0)
             {
                 new Redirect("blogsList.php");
@@ -49,9 +49,10 @@
                 new Redirect("blogsList.php?deactive=true");
                 
             }
+            
             $dislikes = $this->Conn->query("SELECT count(_like) AS dislikes FROM likes WHERE _like=0 AND blogid='$id'");
             $dislikes = $dislikes->fetch(PDO::FETCH_ASSOC);
-            
+
             $data['dislikes']=$dislikes['dislikes'];
            
             return $data;

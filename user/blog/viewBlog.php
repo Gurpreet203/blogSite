@@ -20,7 +20,7 @@
     echo "<div class=\"description\">";
     echo "<p>".$data['description']."</p></div>";
    
-    if($data['likes']==1)
+    if(!empty($data['likeVisit']))
     {
         echo  "<span class='numbers'>".$data['likes']." Likes</span><a href='bloglikes.php?id=$id&dislike=1'class='like'><i class=\"bi bi-hand-thumbs-down\"></i> DISLIKES </a>".$data['dislikes']." dislikes";
     }
